@@ -19,7 +19,7 @@ this page is to show a password generator aplication.
 
 ### Links
 
-- Solution URL: []()
+- Solution URL: [https://github.com/ivargasm/password-generator](https://github.com/ivargasm/password-generator)
 - Live Site URL: []()
 
 ## My process

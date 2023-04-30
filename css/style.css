@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --clr-background-containers: #24222a;
+    --clr-green:#a4feae;
+    --clr-text: hsl(225, 100%, 98%);
+    --clr-text-disabled: #706e7b;
+    --clr-background: #0c0b10;
+    --clr-strength: #f4be1c;
+}
+
+*,
+*:after,
+*:before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.wrapper .title{
+    color: var(--clr-text-disabled);
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.container{
+    padding: 1em;
+    width: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+}
+
+form .pass-result{
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: var(--clr-background-containers);
+    padding: 1em;
+    gap: 1em;
+}
+
+form .pass-result .result{
+    background: none;
+    color: var(--clr-text-disabled);
+}
+
+form .pass-result i{
+    position: absolute;
+    right: 15px;
+    color: var(--clr-green);
+    cursor: pointer;
+}
+
+form .options-container{
+    background-color: var(--clr-background-containers);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+form .options-container .option{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+}
+
+form .options-container .option .length{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form .options-container .option .length div{
+    display: flex;
+    justify-content: space-between;
+}
+
+form .options-container .option .length div .value{
+    color: var(--clr-green);
+}
+
+form .options-container .option input[type='range']{
+    appearance: none;
+    background-color: var(--clr-background);
+    background-image: linear-gradient(var(--clr-green), var(--clr-green));
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    height: 5px;
+    cursor: pointer;
+}
+
+form .options-container .option input[type='range']::-webkit-slider-thumb{
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--clr-text);
+    border-radius: 100%;
+}
+
+form .options-container .option input[type='range']::-webkit-slider-thumb:hover{
+    background-color: var(--clr-background);
+    border: solid 2px var(--clr-green);
+}
+
+form .options-container .option input[type='checkbox']{
+    appearance: none;
+    border: 2px solid var(--clr-text);
+    width: 1em;
+    height: 1em;
+}
+
+form .options-container .option input[type='checkbox']:hover{
+    border: 2px solid var(--clr-green);
+}
+
+form .options-container .option input[type='checkbox']:checked{
+    background-color: var(--clr-green);
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+
+form .options-container .strength{
+    background-color: var(--clr-background);
+    padding: 1em;
+}
+
+form .options-container .strength .strength-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+form .options-container .strength .strength-content .value{
+    display: flex;
+    gap: .5em;
+}
+
+form .options-container .strength .strength-content>p{
+    color: var(--clr-text-disabled);
+    text-transform: uppercase;
+}
+
+form .options-container .strength .strength-content .value .value-strength{
+    width: .8em;
+    height: 100%;
+    border: solid 2px var(--clr-text);
+}
+
+form .options-container .btn{
+    padding: 1em;
+    background-color: var(--clr-green);
+    color: var(--clr-background);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form .options-container .btn:hover{
+    background-color: transparent;
+    border: solid 1px var(--clr-green);
+    color: var(--clr-text);
+}
+
+.color-text{
+    color: var(--clr-text) !important;
+}
+
+.strong{
+    background-color: var(--clr-strength);
+    border: 0 !important;
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    background-color: var(--clr-background-containers);
+    color: var(--clr-text);
+    font-size: .75rem;
+    padding: .25rem .5rem;
+    border: 1px solid var(--clr-green);
+    border-radius: .25rem;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(2rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: .1s;
+    width: max-content;
+    margin-top: .25rem;
+}
+
+[data-tooltip][data-tooltip-bottom]::after {
+    transform: translateX(-50%) translateY(-2rem);
+    bottom: unset;
+    top: 100%;
+}
+
+@media (hover: hover) {
+    [data-tooltip]:hover::after {
+        transform: translateX(-50%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 600px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px){
+    .container{
+        width: 100%;
+    }
+}
