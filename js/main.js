@@ -10,7 +10,7 @@ const strong_4 = document.querySelector('#cuatro')
 const copy = document.querySelector('#copy')
 
 const numbers = [1,2,3,4,5,6,7,8,9,0]
-const specialCharacters = ['@','#','¡','&','$','>','<','%','!']
+const specialCharacters = ['@','#','¡','&','$','>','<','%','!',')','(','*','+','/','[',']','{','}','|']
 const characters = Array.from(Array(26)).map((_,i) => i+97)
 const lowerCase = characters.map(code => String.fromCharCode(code))
 const upperCase = lowerCase.map(letter => letter.toUpperCase())
