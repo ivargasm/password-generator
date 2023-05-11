@@ -67,6 +67,7 @@ form .pass-result{
 
 form .pass-result .result{
     background: none;
+    width: 100%;
     color: var(--clr-text-disabled);
 }
 
